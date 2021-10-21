@@ -21,7 +21,7 @@ services:
       - '8003:80'
 
   merchandise-service:
-    build: .
+    build: ../
     hostname: merchandise_service
     depends_on:
       - stock-api
