@@ -5,7 +5,7 @@ using OzonEdu.MerchandiseService.Grpc;
 
 
 
-using var channel = GrpcChannel.ForAddress("http://localhost:5000");
+using var channel = GrpcChannel.ForAddress("https://localhost:5001");
 var client = new MerchandiseServiceGrpc.MerchandiseServiceGrpcClient(channel);
 
 var item = client.RequestMerchandiseItem(

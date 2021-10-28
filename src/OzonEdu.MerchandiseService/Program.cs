@@ -16,10 +16,6 @@ static IHostBuilder CreateHostBuilder(string[] args) =>
     Host.CreateDefaultBuilder(args)
         .ConfigureWebHostDefaults(webBuilder =>
         {
-            webBuilder.ConfigureKestrel(options =>
-            {
-                options.ListenLocalhost(5001, o => 
-                    o.Protocols = HttpProtocols.Http2);
-            }).UseStartup<Startup>();
+            webBuilder.UseStartup<Startup>();
         })
         .AddInfrastructure();
