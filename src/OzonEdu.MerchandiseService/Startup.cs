@@ -1,16 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
+using OzonEdu.MerchandiseService.GrpcServices;
+using OzonEdu.MerchandiseService.Infrastructure.Interceptors;
+using OzonEdu.MerchandiseService.Services.Interfaces;
 
 namespace OzonEdu.MerchandiseService
 {
@@ -18,14 +12,20 @@ namespace OzonEdu.MerchandiseService
     {
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddControllers();
+            services.AddSingleton<IMerchandiseService, Services.MerchandiseService>();
+            services.AddGrpc(options => options.Interceptors.Add<LoggingInterceptor>());
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseRouting();
             app.UseEndpoints(
-                endpoints => {  });
+                endpoints =>
+                {
+                    endpoints.MapGrpcService<MerchandiseGrpcService>();
+                    endpoints.MapControllers();   
+                });
         }
     }
 }
