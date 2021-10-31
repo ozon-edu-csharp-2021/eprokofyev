@@ -18,13 +18,14 @@ namespace OzonEdu.MerchandiseService.Infrastructure.Extensions
                 services.AddSingleton<IStartupFilter, SwaggerStartupFilter>();
                 services.AddSwaggerGen(config =>
                 {
-                    config.SwaggerDoc("v1", new OpenApiInfo() {Title = "OzonEdu.MerchandiseService", Version = "v1"});
+                    config.SwaggerDoc("v1",
+                        new OpenApiInfo() {Title = "OzonEdu.MerchandiseService", Version = "v1"});
                 });
             });
 
             return builder;
         }
-        
+
         public static IHostBuilder AddHttp(this IHostBuilder builder)
         {
             builder.ConfigureServices(services =>
@@ -37,6 +38,5 @@ namespace OzonEdu.MerchandiseService.Infrastructure.Extensions
 
             return builder;
         }
-        
     }
 }

@@ -21,17 +21,19 @@ namespace OzonEdu.MerchandiseService.Infrastructure.Interceptors
         {
             var requestJson = JsonSerializer.Serialize(request);
             _logger.LogInformation(requestJson);
-            
+
             var response = base.UnaryServerHandler(request, context, continuation);
 
             var responseJson = JsonSerializer.Serialize(response);
             _logger.LogInformation(responseJson);
-            
+
             return response;
         }
 
-        public override AsyncServerStreamingCall<TResponse> AsyncServerStreamingCall<TRequest, TResponse>(TRequest request,
-            ClientInterceptorContext<TRequest, TResponse> context, AsyncServerStreamingCallContinuation<TRequest, TResponse> continuation)
+        public override AsyncServerStreamingCall<TResponse> AsyncServerStreamingCall<TRequest, TResponse>(
+            TRequest request,
+            ClientInterceptorContext<TRequest, TResponse> context,
+            AsyncServerStreamingCallContinuation<TRequest, TResponse> continuation)
         {
             _logger.LogInformation("Streaming has been called");
             return base.AsyncServerStreamingCall(request, context, continuation);

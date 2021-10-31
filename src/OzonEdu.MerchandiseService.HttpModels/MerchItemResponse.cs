@@ -1,6 +1,6 @@
 namespace OzonEdu.MerchandiseService.HttpModels
 {
-    public class MerchItemResponse
+    public sealed class MerchItemResponse
     {
         public string ItemName { get; set; }
     }

@@ -18,18 +18,20 @@ namespace OzonEdu.MerchandiseService.Controllers.v1
         {
             _merchandiseService = merchandiseService;
         }
-        
-        
+
+
         [HttpPost]
-        public async Task<ActionResult<MerchItemRequest>> Add(MerchItemRequest merchItemRequestModel, CancellationToken token)
+        public async Task<ActionResult<MerchItemRequest>> Add(MerchItemRequest merchItemRequestModel,
+            CancellationToken token)
         {
             var createdStockItem = await _merchandiseService.RequestMerch(new MerchRequest
             {
                 MerchName = merchItemRequestModel.ItemName
             }, token);
+
             return Ok(createdStockItem);
         }
-        
+
         [HttpGet("{id:long}")]
         public async Task<ActionResult<MerchResponse>> GetById(long id, CancellationToken token)
         {
@@ -41,7 +43,5 @@ namespace OzonEdu.MerchandiseService.Controllers.v1
 
             return merchItem;
         }
-
-        
     }
 }

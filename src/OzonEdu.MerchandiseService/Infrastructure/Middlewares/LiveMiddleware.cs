@@ -6,14 +6,13 @@ namespace OzonEdu.MerchandiseService.Infrastructure.Middlewares
 {
     public class LiveMiddleware
     {
-            public LiveMiddleware(RequestDelegate next)
-            {
-            }
+        public LiveMiddleware(RequestDelegate next)
+        {
+        }
 
-            public async Task InvokeAsync(HttpContext context)
-            {
-                context.Response.StatusCode = 200;
-                await context.Response.WriteAsync("");
-            }
+        public async Task InvokeAsync(HttpContext context)
+        {
+            await context.Response.WriteAsync("");
+        }
     }
 }

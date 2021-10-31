@@ -10,7 +10,7 @@ namespace OzonEdu.MerchandiseService.Infrastructure.Middlewares
         public VersionMiddleware(RequestDelegate next)
         {
         }
-        
+
 
         public async Task InvokeAsync(HttpContext context)
         {

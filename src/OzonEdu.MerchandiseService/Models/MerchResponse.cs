@@ -6,7 +6,7 @@ namespace OzonEdu.MerchandiseService.Models
         {
             MerchName = merchName;
         }
-        
+
         public string MerchName { get; }
     }
 }
