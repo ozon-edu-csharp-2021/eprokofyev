@@ -1,6 +1,6 @@
 namespace OzonEdu.MerchandiseService.Models
 {
-    public class MerchResponse
+    public sealed class MerchResponse
     {
         public MerchResponse(string merchName)
         {

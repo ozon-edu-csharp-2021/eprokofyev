@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace OzonEdu.MerchandiseService.Infrastructure.Middlewares
 {
-    public class VersionMiddleware
+    public sealed class VersionMiddleware
     {
         public VersionMiddleware(RequestDelegate next)
         {

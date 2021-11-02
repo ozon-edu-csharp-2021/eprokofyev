@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace OzonEdu.MerchandiseService.Infrastructure.Middlewares
 {
-    public class ReadyMiddleware
+    public sealed class ReadyMiddleware
     {
         public ReadyMiddleware(RequestDelegate next)
         {
@@ -11,7 +11,7 @@ namespace OzonEdu.MerchandiseService.Infrastructure.Middlewares
 
         public async Task InvokeAsync(HttpContext context)
         {
-            await context.Response.WriteAsync("");
+            
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace OzonEdu.MerchandiseService.Models
 {
-    public class MerchItem
+    public sealed class MerchItem
     {
         public string MerchId { get; set; }
         
