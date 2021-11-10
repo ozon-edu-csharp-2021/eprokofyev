@@ -1,5 +1,7 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using OzonEdu.MerchandiseService.HttpModels;
 using OzonEdu.MerchandiseService.Models;
@@ -13,9 +15,11 @@ namespace OzonEdu.MerchandiseService.Controllers.v1
     public class MerchandiseController : ControllerBase
     {
         private readonly IMerchandiseService _merchandiseService;
+        private readonly IMediator _mediator;
 
-        public MerchandiseController(IMerchandiseService merchandiseService)
+        public MerchandiseController(IMerchandiseService merchandiseService, IMediator mediator)
         {
+            _mediator = mediator;
             _merchandiseService = merchandiseService;
         }
 
@@ -32,14 +36,11 @@ namespace OzonEdu.MerchandiseService.Controllers.v1
             return Ok(createdStockItem);
         }
 
-        [HttpGet("{id:long}")]
-        public async Task<ActionResult<MerchResponse>> GetById(long id, CancellationToken token)
+        [HttpGet("{id:Guid}")]
+        public async Task<ActionResult<MerchResponse>> GetById(Guid id, CancellationToken token)
         {
             var merchItem = await _merchandiseService.ResponseMerch(id, token);
-            if (merchItem is null)
-            {
-                return NotFound();
-            }
+            if (merchItem is null) return NotFound();
 
             return merchItem;
         }

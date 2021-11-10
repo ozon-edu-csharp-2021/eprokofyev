@@ -11,7 +11,6 @@ namespace OzonEdu.MerchandiseService.Infrastructure.Middlewares
 
         public async Task Invoke(HttpContext context)
         {
-            
         }
     }
 }

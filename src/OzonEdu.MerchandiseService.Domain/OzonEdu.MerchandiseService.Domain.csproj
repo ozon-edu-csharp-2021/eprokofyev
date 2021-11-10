@@ -5,6 +5,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\OzonEdu.MerchandiseService.HttpModels\OzonEdu.MerchandiseService.HttpModels.csproj"/>
+        <PackageReference Include="MediatR" Version="9.0.0" />
     </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Exceptions" />
+    </ItemGroup>
+
 </Project>

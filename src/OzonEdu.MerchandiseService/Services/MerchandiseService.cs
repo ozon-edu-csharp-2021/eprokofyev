@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using OzonEdu.MerchandiseService.Models;
@@ -9,14 +10,14 @@ namespace OzonEdu.MerchandiseService.Services
     {
         public Task<MerchItem> RequestMerch(MerchRequest merchItem, CancellationToken _)
         {
-            var newMerchItem = new MerchItem()
+            var newMerchItem = new MerchItem
             {
                 MerchName = merchItem.MerchName
             };
             return Task.FromResult(newMerchItem);
         }
 
-        public Task<MerchResponse> ResponseMerch(long itemId, CancellationToken _)
+        public Task<MerchResponse> ResponseMerch(Guid itemId, CancellationToken _)
         {
             return Task.FromResult(new MerchResponse("T-Shirt"));
         }

@@ -1,7 +1,7 @@
 using System.Reflection;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using System.Text.Json;
 
 namespace OzonEdu.MerchandiseService.Infrastructure.Middlewares
 {

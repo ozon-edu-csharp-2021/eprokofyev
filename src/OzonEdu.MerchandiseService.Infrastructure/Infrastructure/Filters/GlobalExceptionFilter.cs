@@ -10,8 +10,7 @@ namespace OzonEdu.MerchandiseService.Infrastructure.Filters
         {
             var resultObject = new
             {
-                ExceptionType = context.Exception.GetType().FullName,
-                Message = context.Exception.Message
+                ExceptionType = context.Exception.GetType().FullName, context.Exception.Message
             };
 
             var jsonResult = new JsonResult(resultObject)
