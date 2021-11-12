@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using OzonEdu.MerchandiseService.Models;
@@ -10,6 +9,6 @@ namespace OzonEdu.MerchandiseService.Services.Interfaces
     {
         Task<MerchItem> RequestMerch(MerchRequest merchItem, CancellationToken token);
 
-        Task<MerchResponse> ResponseMerch(long itemId, CancellationToken token);
+        Task<MerchResponse> ResponseMerch(Guid itemId, CancellationToken token);
     }
 }

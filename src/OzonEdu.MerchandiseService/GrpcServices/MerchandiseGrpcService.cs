@@ -18,11 +18,11 @@ namespace OzonEdu.MerchandiseService.GrpcServices
         public override async Task<RequestMerchandiseItemResponse> RequestMerchandiseItem(
             RequestMerchandiseItemRequest request, ServerCallContext context)
         {
-            var merchItem = await _merchandiseService.RequestMerch(new MerchRequest()
+            var merchItem = await _merchandiseService.RequestMerch(new MerchRequest
             {
                 MerchName = request.ItemName
             }, context.CancellationToken);
-            return new RequestMerchandiseItemResponse()
+            return new RequestMerchandiseItemResponse
             {
                 ItemName = merchItem.MerchName
             };
@@ -31,11 +31,11 @@ namespace OzonEdu.MerchandiseService.GrpcServices
         public override async Task<RequestMerchandiseInfo> GetRequestMerchandiseInfo(
             RequestMerchandiseItemRequest request, ServerCallContext context)
         {
-            var merchItem = await _merchandiseService.RequestMerch(new MerchRequest()
+            var merchItem = await _merchandiseService.RequestMerch(new MerchRequest
             {
                 MerchName = request.ItemName
             }, context.CancellationToken);
-            return new RequestMerchandiseInfo()
+            return new RequestMerchandiseInfo
             {
                 ItemName = merchItem.MerchName
             };
