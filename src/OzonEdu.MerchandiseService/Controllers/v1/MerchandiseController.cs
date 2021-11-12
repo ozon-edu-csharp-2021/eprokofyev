@@ -14,8 +14,8 @@ namespace OzonEdu.MerchandiseService.Controllers.v1
     [Produces("application/json")]
     public class MerchandiseController : ControllerBase
     {
-        private readonly IMerchandiseService _merchandiseService;
         private readonly IMediator _mediator;
+        private readonly IMerchandiseService _merchandiseService;
 
         public MerchandiseController(IMerchandiseService merchandiseService, IMediator mediator)
         {

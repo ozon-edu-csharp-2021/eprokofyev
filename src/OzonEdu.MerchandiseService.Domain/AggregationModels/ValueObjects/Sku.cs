@@ -5,13 +5,13 @@ namespace OzonEdu.MerchandiseService.Domain.AggregationModels.MerchRequestAggreg
 {
     public class Sku : ValueObject
     {
-        public long Value { get; }
-        
         public Sku(long sku)
         {
             Value = sku;
         }
-        
+
+        public long Value { get; }
+
         protected override IEnumerable<object> GetEqualityComponents()
         {
             yield return Value;

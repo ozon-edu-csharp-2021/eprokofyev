@@ -5,13 +5,13 @@ namespace OzonEdu.MerchandiseService.Domain.AggregationModels.MerchItemAggregate
 {
     public class Name : ValueObject
     {
-        public string Value { get; }
-        
         public Name(string name)
         {
             Value = name;
         }
-        
+
+        public string Value { get; }
+
         protected override IEnumerable<object> GetEqualityComponents()
         {
             yield return Value;

@@ -9,6 +9,5 @@ namespace OzonEdu.MerchandiseService.Domain.AggregationModels.EmployeeAggregate
         ///     Уникальный идентификатор сотрудника
         /// </summary>
         public Guid Id { get; }
-        
     }
 }

@@ -30,7 +30,7 @@ namespace OzonEdu.MerchandiseService.Domain.AggregationModels.MerchRequestAggreg
         ///     ID мерч пака для выдачи
         /// </summary>
         public long MerchPackId { get; private set; }
-        
+
         /// <summary>
         ///     Набор размеров одежды
         /// </summary>

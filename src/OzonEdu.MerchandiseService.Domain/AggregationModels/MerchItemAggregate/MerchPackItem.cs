@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace OzonEdu.MerchandiseService.Domain.AggregationModels.MerchItemAggregate
 {
@@ -14,8 +13,9 @@ namespace OzonEdu.MerchandiseService.Domain.AggregationModels.MerchItemAggregate
             MerchPackItemType = merchPackItemType;
             ItemIdCollection = itemIdCollection;
         }
+
         public Name MerchName { get; }
-        
+
         public MerchPackItem MerchPackItemType { get; }
         public List<long> ItemIdCollection { get; }
     }
